@@ -25,7 +25,7 @@ python Crt_Subdomain_Fetcher.py [-t DOMAIN] [-f FILE] [-threads NUMBER]
 
 - `-t DOMAIN`: 指定单个目标域名。
 - `-f FILE`: 包含域名列表的文件，每行一个域名。
-- `-threads NUMBER`: 选择使用的线程数（默认为10）。
+- `-threads NUMBER`: 选择使用的线程数（默认为5）。
 
 ### 示例
 
@@ -89,7 +89,7 @@ python Crt_Subdomain_Fetcher.py [-t DOMAIN] [-f FILE] [-threads NUMBER]
 
 - `-t DOMAIN`: Specify a single target domain.
 - `-f FILE`: Specify a file containing a list of domains, one per line.
-- `-threads NUMBER`: Choose the number of threads to use (default is 10).
+- `-threads NUMBER`: Choose the number of threads to use (default is 5).
 
 ### Examples
 
