@@ -28,6 +28,34 @@ def fetch_subdomains(domain, result_file):
         print(f"Error fetching {domain}: {e}")
 
 
+def separate_subdomains(filename, wildcard_file='wildcard_subdomains.txt',
+                        non_wildcard_file='non_wildcard_subdomains.txt'):
+    current_dir = os.getcwd()
+    file_path = os.path.join(current_dir, filename)
+
+    with open(file_path, 'r', encoding='utf-8') as file:
+        lines = file.readlines()
+
+    # 保存所有子域名
+    with open(wildcard_file, mode='w', encoding='utf-8') as wildcard_f, \
+            open(non_wildcard_file, mode='w', encoding='utf-8') as non_wildcard_f:
+
+        for line in sorted(set(line.strip() for line in lines)):
+            if '*' in line:
+                wildcard_f.write(f"{line}\n")
+            else:
+                non_wildcard_f.write(f"{line}\n")
+
+    print(f"包含通配符的子域名已写入 {os.path.join(current_dir, wildcard_file)}")
+    print(f"不包含通配符的子域名已写入 {os.path.join(current_dir, non_wildcard_file)}")
+
+
+def main():
+    # (保持之前的代码不变)
+    print(f"去重后的数据已写入 {file_path}")
+
+
+
 def remove_duplicates(filename):
     current_dir = os.getcwd()
     file_path = os.path.join(current_dir, filename)
@@ -42,6 +70,9 @@ def remove_duplicates(filename):
             file.write(f"{line}\n")
 
     print(f"去重后的数据已写入 {file_path}")
+
+    # 调用函数分离子域名
+    separate_subdomains(filename)
 
 
 def main():

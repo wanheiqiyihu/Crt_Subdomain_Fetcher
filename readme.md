@@ -49,7 +49,7 @@ python Crt_Subdomain_Fetcher.py [-t DOMAIN] [-f FILE] [-threads NUMBER]
 
 ## 输出
 
-脚本会生成一个包含所有子域名的文件，默认为`out.txt`。该文件将保存在脚本执行目录中。
+脚本会生成一个包含所有子域名的文件，默认为`out.txt`，包含通配符的结果存到`wildcard_subdomains.txt`，不包含通配符的结果存到`non_wildcard_subdomains.txt`。这些文件将保存在脚本执行目录中。
 
 ## 注意事项
 
@@ -113,7 +113,7 @@ python Crt_Subdomain_Fetcher.py [-t DOMAIN] [-f FILE] [-threads NUMBER]
 
 ## Output
 
-The script will generate a file containing all subdomains, named `out.txt` by default. This file will be saved in the directory where the script is executed.
+​    The script will generate a file containing all subdomains, defaulting to `out.txt`. Results with wildcards will be saved to `wildcard_subdomains.txt`, and results without wildcards will be saved to `non_wildcard_subdomains.txt`. These files will be stored in the directory where the script is executed.
 
 ## Notes
 
