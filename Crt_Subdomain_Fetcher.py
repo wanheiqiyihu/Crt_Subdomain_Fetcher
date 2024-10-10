@@ -50,9 +50,7 @@ def separate_subdomains(filename, wildcard_file='wildcard_subdomains.txt',
     print(f"不包含通配符的子域名已写入 {os.path.join(current_dir, non_wildcard_file)}")
 
 
-def main():
-    # (保持之前的代码不变)
-    print(f"去重后的数据已写入 {file_path}")
+
 
 
 
